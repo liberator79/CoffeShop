@@ -1,5 +1,4 @@
 package com.example.coffeshop.Domain
-
 import java.io.Serializable
 
 data class ItemsModel(

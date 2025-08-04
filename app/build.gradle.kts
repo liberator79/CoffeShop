@@ -36,12 +36,16 @@ android {
     }
     buildFeatures{
         viewBinding=true
+        dataBinding=true
     }
 
 }
 
 dependencies {
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.1")
     implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation("com.google.code.gson:gson:2.13.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

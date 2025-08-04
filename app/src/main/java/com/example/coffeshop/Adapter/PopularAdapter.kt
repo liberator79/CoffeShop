@@ -1,10 +1,12 @@
 package com.example.coffeshop.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.coffeshop.Activity.DetailsActivity
 import com.example.coffeshop.Domain.ItemsModel
 import com.example.coffeshop.databinding.ViewholderPopularBinding
 
@@ -28,6 +30,11 @@ class PopularAdapter(val items : MutableList<ItemsModel>) :
             .into(holder.binding.pic);
         holder.binding.subtitle.text = item.extra;
         holder.binding.price.text = "$ "+item.price.toString();
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, DetailsActivity::class.java);
+            intent.putExtra("object", item);
+            context.startActivity(intent);
+        }
     }
 
     override fun getItemCount(): Int {

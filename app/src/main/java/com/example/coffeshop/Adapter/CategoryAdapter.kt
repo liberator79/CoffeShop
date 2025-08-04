@@ -1,13 +1,16 @@
 package com.example.coffeshop.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.coffeshop.Activity.ItemsListActivity
 import com.example.coffeshop.Domain.CategoryModel
 import com.example.coffeshop.R
 import com.example.coffeshop.databinding.ViewholderCategoryBinding
@@ -41,7 +44,11 @@ RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>(){
             notifyItemChanged(selectedItemPosition)
 
             Handler(Looper.getMainLooper()).postDelayed({
-
+                val intent = Intent(context, ItemsListActivity::class.java).apply {
+                    putExtra("id", item.id.toString());
+                    putExtra("title", item.title);
+                }
+                ContextCompat.startActivity(context,intent,null);
             }, 500)
         }
 
