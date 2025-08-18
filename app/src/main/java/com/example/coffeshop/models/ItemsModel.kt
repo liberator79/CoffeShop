@@ -1,5 +1,4 @@
 package com.example.coffeshop.Domain
-import java.io.Serializable
 
 data class ItemsModel(
     var title : String = "",
@@ -9,4 +8,4 @@ data class ItemsModel(
     var rating : Double = 0.0,
     var numberInCart : Int = 0,
     var extra : String = "",
-) : Serializable
+)
